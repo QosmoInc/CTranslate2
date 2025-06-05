@@ -1,7 +1,6 @@
 import argparse
 import os
 
-import yaml
 
 from ctranslate2.converters.marian import MarianConverter
 
@@ -15,6 +14,7 @@ class OpusMTConverter(MarianConverter):
         Arguments:
           model_dir: Path the OPUS-MT model directory.
         """
+        import yaml
         with open(
             os.path.join(model_dir, "decoder.yml"), encoding="utf-8"
         ) as decoder_file:

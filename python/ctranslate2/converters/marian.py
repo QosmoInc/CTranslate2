@@ -4,7 +4,6 @@ import re
 from typing import List
 
 import numpy as np
-import yaml
 
 from ctranslate2.converters import utils
 from ctranslate2.converters.converter import Converter
@@ -109,6 +108,7 @@ class MarianConverter(Converter):
 
 
 def _get_model_config(model):
+    import yaml
     config = model["special:model.yml"]
     config = config[:-1].tobytes()
     config = yaml.safe_load(config)
